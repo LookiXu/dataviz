@@ -1,0 +1,1647 @@
+Last login: Fri Mar 13 17:40:36 on console
+lyf@liuyunfengdeMac-mini ~ % # 查看pg服务状态
+sudo systemctl status postgresql
+
+# 启动pg服务（若未启动）
+sudo systemctl start postgresql
+zsh: command not found: #
+Password:
+sudo: systemctl: command not found
+zsh: command not found: #
+sudo: systemctl: command not found
+lyf@liuyunfengdeMac-mini ~ % # 第一步：切换到pg系统用户postgres（必须）
+sudo su - postgres
+
+# 第二步：打开psql命令行
+psql
+
+# 无需密码（本地超级用户免密），直接进入pg命令行（提示符变为 postgres=#）
+zsh: command not found: #
+su: unknown login: postgres
+zsh: command not found: #
+psql: 错误: 连接到套接字"/tmp/.s.PGSQL.5432"上的服务器失败:FATAL:  role "lyf" does not exist
+zsh: command not found: #
+lyf@liuyunfengdeMac-mini ~ % sudo systemctl start postgresql
+sudo: systemctl: command not found
+lyf@liuyunfengdeMac-mini ~ % psql --version
+psql (PostgreSQL) 16.9 (Homebrew)
+lyf@liuyunfengdeMac-mini ~ % sudo su - postgres
+su: unknown login: postgres
+lyf@liuyunfengdeMac-mini ~ % psql -U postgres
+psql (16.9 (Homebrew))
+输入 "help" 来获取帮助信息.
+
+postgres=# \dt
+没有找到任何关系.
+postgres=# \l
+                                                           数据库列表
+    名称    |  拥有者  | 字元编码 | Locale Provider |  校对规则   |    Ctype    | ICU Locale | ICU Rules |       存取权限        
+------------+----------+----------+-----------------+-------------+-------------+------------+-----------+-----------------------
+ dataviz_db | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ postgres   | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ template0  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+ template1  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+(4 行记录)
+
+(END)
+                                                           数据库列表
+    名称    |  拥有者  | 字元编码 | Locale Provider |  校对规则   |    Ctype    | ICU Locale | ICU Rules |       存取权限        
+------------+----------+----------+-----------------+-------------+-------------+------------+-----------+-----------------------
+ dataviz_db | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ postgres   | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ template0  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+ template1  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+(4 行记录)
+
+~
+~
+~
+~
+(END)
+                                                           数据库列表
+    名称    |  拥有者  | 字元编码 | Locale Provider |  校对规则   |    Ctype    | ICU Locale | ICU Rules |       存取权限        
+------------+----------+----------+-----------------+-------------+-------------+------------+-----------+-----------------------
+ dataviz_db | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ postgres   | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ template0  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+ template1  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+(4 行记录)
+
+~
+~
+~
+~
+(END)
+                                                           数据库列表
+    名称    |  拥有者  | 字元编码 | Locale Provider |  校对规则   |    Ctype    | ICU Locale | ICU Rules |       存取权限        
+------------+----------+----------+-----------------+-------------+-------------+------------+-----------+-----------------------
+ dataviz_db | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ postgres   | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ template0  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+ template1  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+(4 行记录)
+
+~
+~
+~
+~
+(END)
+                                                           数据库列表
+    名称    |  拥有者  | 字元编码 | Locale Provider |  校对规则   |    Ctype    | ICU Locale | ICU Rules |       存取权限        
+------------+----------+----------+-----------------+-------------+-------------+------------+-----------+-----------------------
+ dataviz_db | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ postgres   | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ template0  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+ template1  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+(4 行记录)
+
+~
+~
+~
+~
+(END)
+                                                           数据库列表
+    名称    |  拥有者  | 字元编码 | Locale Provider |  校对规则   |    Ctype    | ICU Locale | ICU Rules |       存取权限        
+------------+----------+----------+-----------------+-------------+-------------+------------+-----------+-----------------------
+ dataviz_db | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ postgres   | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ template0  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+ template1  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+(4 行记录)
+
+~
+~
+~
+~
+(END)
+                                                           数据库列表
+    名称    |  拥有者  | 字元编码 | Locale Provider |  校对规则   |    Ctype    | ICU Locale | ICU Rules |       存取权限        
+------------+----------+----------+-----------------+-------------+-------------+------------+-----------+-----------------------
+ dataviz_db | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ postgres   | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ template0  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+ template1  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+(4 行记录)
+
+~
+~
+~
+~
+(END)
+                                                           数据库列表
+    名称    |  拥有者  | 字元编码 | Locale Provider |  校对规则   |    Ctype    | ICU Locale | ICU Rules |       存取权限        
+------------+----------+----------+-----------------+-------------+-------------+------------+-----------+-----------------------
+ dataviz_db | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ postgres   | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ template0  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+ template1  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+(4 行记录)
+
+~
+~
+~
+~
+(END)
+                                                           数据库列表
+    名称    |  拥有者  | 字元编码 | Locale Provider |  校对规则   |    Ctype    | ICU Locale | ICU Rules |       存取权限        
+------------+----------+----------+-----------------+-------------+-------------+------------+-----------+-----------------------
+ dataviz_db | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ postgres   | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ template0  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+ template1  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+(4 行记录)
+
+~
+~
+~
+~
+(END)
+                                                           数据库列表
+    名称    |  拥有者  | 字元编码 | Locale Provider |  校对规则   |    Ctype    | ICU Locale | ICU Rules |       存取权限        
+------------+----------+----------+-----------------+-------------+-------------+------------+-----------+-----------------------
+ dataviz_db | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ postgres   | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ template0  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+ template1  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+(4 行记录)
+
+~
+~
+~
+~
+(END)
+                                                           数据库列表
+    名称    |  拥有者  | 字元编码 | Locale Provider |  校对规则   |    Ctype    | ICU Locale | ICU Rules |       存取权限        
+------------+----------+----------+-----------------+-------------+-------------+------------+-----------+-----------------------
+ dataviz_db | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ postgres   | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ template0  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+ template1  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+(4 行记录)
+
+~
+~
+~
+~
+(END)
+                                                           数据库列表
+    名称    |  拥有者  | 字元编码 | Locale Provider |  校对规则   |    Ctype    | ICU Locale | ICU Rules |       存取权限        
+------------+----------+----------+-----------------+-------------+-------------+------------+-----------+-----------------------
+ dataviz_db | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ postgres   | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ template0  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+ template1  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+(4 行记录)
+
+~
+~
+~
+~
+(END)
+                                                           数据库列表
+    名称    |  拥有者  | 字元编码 | Locale Provider |  校对规则   |    Ctype    | ICU Locale | ICU Rules |       存取权限        
+------------+----------+----------+-----------------+-------------+-------------+------------+-----------+-----------------------
+ dataviz_db | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ postgres   | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ template0  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+ template1  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+(4 行记录)
+
+~
+~
+~
+~
+(END)
+                                                           数据库列表
+    名称    |  拥有者  | 字元编码 | Locale Provider |  校对规则   |    Ctype    | ICU Locale | ICU Rules |       存取权限        
+------------+----------+----------+-----------------+-------------+-------------+------------+-----------+-----------------------
+ dataviz_db | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ postgres   | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ template0  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+ template1  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+(4 行记录)
+
+~
+~
+~
+~
+(END)
+                                                           数据库列表
+    名称    |  拥有者  | 字元编码 | Locale Provider |  校对规则   |    Ctype    | ICU Locale | ICU Rules |       存取权限        
+------------+----------+----------+-----------------+-------------+-------------+------------+-----------+-----------------------
+ dataviz_db | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ postgres   | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ template0  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+ template1  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+(4 行记录)
+
+~
+~
+~
+~
+(END)
+                                                           数据库列表
+    名称    |  拥有者  | 字元编码 | Locale Provider |  校对规则   |    Ctype    | ICU Locale | ICU Rules |       存取权限        
+------------+----------+----------+-----------------+-------------+-------------+------------+-----------+-----------------------
+ dataviz_db | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ postgres   | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ template0  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+ template1  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+(4 行记录)
+
+~
+~
+~
+~
+(END)
+                                                           数据库列表
+    名称    |  拥有者  | 字元编码 | Locale Provider |  校对规则   |    Ctype    | ICU Locale | ICU Rules |       存取权限        
+------------+----------+----------+-----------------+-------------+-------------+------------+-----------+-----------------------
+ dataviz_db | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ postgres   | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ template0  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+ template1  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+(4 行记录)
+
+~
+~
+~
+~
+(END)
+                                                           数据库列表
+    名称    |  拥有者  | 字元编码 | Locale Provider |  校对规则   |    Ctype    | ICU Locale | ICU Rules |       存取权限        
+------------+----------+----------+-----------------+-------------+-------------+------------+-----------+-----------------------
+ dataviz_db | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ postgres   | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ template0  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+ template1  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+(4 行记录)
+
+~
+~
+~
+~
+(END)
+                                                           数据库列表
+    名称    |  拥有者  | 字元编码 | Locale Provider |  校对规则   |    Ctype    | ICU Locale | ICU Rules |       存取权限        
+------------+----------+----------+-----------------+-------------+-------------+------------+-----------+-----------------------
+ dataviz_db | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ postgres   | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ template0  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+ template1  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+(4 行记录)
+
+~
+~
+~
+~
+(END)
+                                                           数据库列表
+    名称    |  拥有者  | 字元编码 | Locale Provider |  校对规则   |    Ctype    | ICU Locale | ICU Rules |       存取权限        
+------------+----------+----------+-----------------+-------------+-------------+------------+-----------+-----------------------
+ dataviz_db | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ postgres   | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ template0  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+ template1  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+(4 行记录)
+
+~
+~
+~
+~
+(END)
+                                                           数据库列表
+    名称    |  拥有者  | 字元编码 | Locale Provider |  校对规则   |    Ctype    | ICU Locale | ICU Rules |       存取权限        
+------------+----------+----------+-----------------+-------------+-------------+------------+-----------+-----------------------
+ dataviz_db | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ postgres   | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ template0  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+ template1  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+(4 行记录)
+
+~
+~
+~
+~
+(END)
+                                                           数据库列表
+    名称    |  拥有者  | 字元编码 | Locale Provider |  校对规则   |    Ctype    | ICU Locale | ICU Rules |       存取权限        
+------------+----------+----------+-----------------+-------------+-------------+------------+-----------+-----------------------
+ dataviz_db | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ postgres   | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ template0  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+ template1  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+(4 行记录)
+
+~
+~
+~
+~
+(END)
+                                                           数据库列表
+    名称    |  拥有者  | 字元编码 | Locale Provider |  校对规则   |    Ctype    | ICU Locale | ICU Rules |       存取权限        
+------------+----------+----------+-----------------+-------------+-------------+------------+-----------+-----------------------
+ dataviz_db | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ postgres   | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ template0  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+ template1  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+(4 行记录)
+
+~
+~
+~
+~
+(END)
+                                                           数据库列表
+    名称    |  拥有者  | 字元编码 | Locale Provider |  校对规则   |    Ctype    | ICU Locale | ICU Rules |       存取权限        
+------------+----------+----------+-----------------+-------------+-------------+------------+-----------+-----------------------
+ dataviz_db | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ postgres   | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ template0  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+ template1  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+(4 行记录)
+
+~
+~
+~
+~
+(END)
+                                                           数据库列表
+    名称    |  拥有者  | 字元编码 | Locale Provider |  校对规则   |    Ctype    | ICU Locale | ICU Rules |       存取权限        
+------------+----------+----------+-----------------+-------------+-------------+------------+-----------+-----------------------
+ dataviz_db | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ postgres   | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ template0  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+ template1  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+(4 行记录)
+
+~
+~
+~
+~
+(END)
+                                                           数据库列表
+    名称    |  拥有者  | 字元编码 | Locale Provider |  校对规则   |    Ctype    | ICU Locale | ICU Rules |       存取权限        
+------------+----------+----------+-----------------+-------------+-------------+------------+-----------+-----------------------
+ dataviz_db | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ postgres   | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ template0  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+ template1  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+(4 行记录)
+
+~
+~
+~
+~
+(END)
+                                                           数据库列表
+    名称    |  拥有者  | 字元编码 | Locale Provider |  校对规则   |    Ctype    | ICU Locale | ICU Rules |       存取权限        
+------------+----------+----------+-----------------+-------------+-------------+------------+-----------+-----------------------
+ dataviz_db | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ postgres   | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ template0  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+ template1  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+(4 行记录)
+
+~
+~
+~
+~
+(END)
+                                                           数据库列表
+    名称    |  拥有者  | 字元编码 | Locale Provider |  校对规则   |    Ctype    | ICU Locale | ICU Rules |       存取权限        
+------------+----------+----------+-----------------+-------------+-------------+------------+-----------+-----------------------
+ dataviz_db | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ postgres   | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ template0  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+ template1  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+(4 行记录)
+
+~
+~
+~
+~
+(END)
+                                                           数据库列表
+    名称    |  拥有者  | 字元编码 | Locale Provider |  校对规则   |    Ctype    | ICU Locale | ICU Rules |       存取权限        
+------------+----------+----------+-----------------+-------------+-------------+------------+-----------+-----------------------
+ dataviz_db | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ postgres   | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ template0  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+ template1  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+(4 行记录)
+
+~
+~
+~
+~
+(END)
+                                                           数据库列表
+    名称    |  拥有者  | 字元编码 | Locale Provider |  校对规则   |    Ctype    | ICU Locale | ICU Rules |       存取权限        
+------------+----------+----------+-----------------+-------------+-------------+------------+-----------+-----------------------
+ dataviz_db | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ postgres   | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ template0  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+ template1  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+(4 行记录)
+
+~
+~
+~
+~
+(END)
+                                                           数据库列表
+    名称    |  拥有者  | 字元编码 | Locale Provider |  校对规则   |    Ctype    | ICU Locale | ICU Rules |       存取权限        
+------------+----------+----------+-----------------+-------------+-------------+------------+-----------+-----------------------
+ dataviz_db | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ postgres   | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ template0  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+ template1  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+(4 行记录)
+
+~
+~
+~
+~
+(END)
+                                                           数据库列表
+    名称    |  拥有者  | 字元编码 | Locale Provider |  校对规则   |    Ctype    | ICU Locale | ICU Rules |       存取权限        
+------------+----------+----------+-----------------+-------------+-------------+------------+-----------+-----------------------
+ dataviz_db | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ postgres   | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ template0  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+ template1  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+(4 行记录)
+
+~
+~
+~
+~
+(END)
+                                                           数据库列表
+    名称    |  拥有者  | 字元编码 | Locale Provider |  校对规则   |    Ctype    | ICU Locale | ICU Rules |       存取权限        
+------------+----------+----------+-----------------+-------------+-------------+------------+-----------+-----------------------
+ dataviz_db | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ postgres   | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ template0  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+ template1  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+(4 行记录)
+
+~
+~
+~
+~
+(END)
+                                                           数据库列表
+    名称    |  拥有者  | 字元编码 | Locale Provider |  校对规则   |    Ctype    | ICU Locale | ICU Rules |       存取权限        
+------------+----------+----------+-----------------+-------------+-------------+------------+-----------+-----------------------
+ dataviz_db | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ postgres   | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ template0  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+ template1  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+(4 行记录)
+
+~
+~
+~
+~
+(END)
+                                                           数据库列表
+    名称    |  拥有者  | 字元编码 | Locale Provider |  校对规则   |    Ctype    | ICU Locale | ICU Rules |       存取权限        
+------------+----------+----------+-----------------+-------------+-------------+------------+-----------+-----------------------
+ dataviz_db | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ postgres   | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ template0  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+ template1  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+(4 行记录)
+
+~
+~
+~
+~
+(END)
+                                                           数据库列表
+    名称    |  拥有者  | 字元编码 | Locale Provider |  校对规则   |    Ctype    | ICU Locale | ICU Rules |       存取权限        
+------------+----------+----------+-----------------+-------------+-------------+------------+-----------+-----------------------
+ dataviz_db | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ postgres   | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ template0  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+ template1  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+(4 行记录)
+
+~
+~
+~
+~
+(END)
+                                                           数据库列表
+    名称    |  拥有者  | 字元编码 | Locale Provider |  校对规则   |    Ctype    | ICU Locale | ICU Rules |       存取权限        
+------------+----------+----------+-----------------+-------------+-------------+------------+-----------+-----------------------
+ dataviz_db | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ postgres   | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ template0  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+ template1  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+(4 行记录)
+
+~
+~
+~
+~
+(END)
+                                                           数据库列表
+    名称    |  拥有者  | 字元编码 | Locale Provider |  校对规则   |    Ctype    | ICU Locale | ICU Rules |       存取权限        
+------------+----------+----------+-----------------+-------------+-------------+------------+-----------+-----------------------
+ dataviz_db | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ postgres   | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ template0  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+ template1  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+(4 行记录)
+
+~
+~
+~
+~
+(END)
+                                                           数据库列表
+    名称    |  拥有者  | 字元编码 | Locale Provider |  校对规则   |    Ctype   | ICU Locale | ICU Rules |       存取权限        
+------------+----------+----------+-----------------+-------------+------------+------------+-----------+-----------------------
+ dataviz_db | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8|            |           | 
+ postgres   | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8|            |           | 
+ template0  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8|            |           | =c/postgres          +
+            |          |          |                 |             |            |            |           | postgres=CTc/postgres
+ template1  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8|            |           | =c/postgres          +
+            |          |          |                 |             |            |            |           | postgres=CTc/postgres
+(4 行记录)
+
+~
+~
+~
+~
+(END)
+                                                           数据库列表
+    名称    |  拥有者  | 字元编码 | Locale Provider |  校对规则   |    Ctype    | ICU Locale | ICU Rules |       存取权限        
+------------+----------+----------+-----------------+-------------+-------------+------------+-----------+-----------------------
+ dataviz_db | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ postgres   | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ template0  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+ template1  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+(4 行记录)
+
+~
+~
+~
+~
+(END)
+                                                           数据库列表
+    名称    |  拥有者  | 字元编码 | Locale Provider |  校对规则   |    Ctype    | ICU Locale | ICU Rules |       存取权限        
+------------+----------+----------+-----------------+-------------+-------------+------------+-----------+-----------------------
+ dataviz_db | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ postgres   | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ template0  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+ template1  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+(4 行记录)
+
+~
+~
+~
+~
+(END)
+                                                           数据库列表
+    名称    |  拥有者  | 字元编码 | Locale Provider |  校对规则   |    Ctype    | ICU Locale | ICU Rules |       存取权限        
+------------+----------+----------+-----------------+-------------+-------------+------------+-----------+-----------------------
+ dataviz_db | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ postgres   | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | 
+ template0  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+ template1  | postgres | UTF8     | libc            | zh_CN.UTF-8 | zh_CN.UTF-8 |            |           | =c/postgres          +
+            |          |          |                 |             |             |            |           | postgres=CTc/postgres
+(4 行记录)
+
+~
+~
+~
+~
+postgres=# ^C
+postgres=# ^C
+postgres=# \q
+lyf@liuyunfengdeMac-mini ~ % d:\XiaoProject\DataVizPro\dataviz-backend.
+tar username@your-server-ip:/home/username//Users/lyf/Downloads/dataviz-backend     
+zsh: command not found: d:XiaoProjectDataVizProdataviz-backend.
+zsh: no such file or directory: tar username@your-server-ip:/home/username//Users/lyf/Downloads/dataviz-backend
+lyf@liuyunfengdeMac-mini ~ % /Users/lyf/Downloads/dataviz-backend.tar ubuntu@49.234.182.216:/home/ubantu/  
+zsh: permission denied: /Users/lyf/Downloads/dataviz-backend.tar
+lyf@liuyunfengdeMac-mini ~ % /Users/lyf/Downloads/dataviz-frontend.tar 
+zsh: permission denied: /Users/lyf/Downloads/dataviz-frontend.tar
+lyf@liuyunfengdeMac-mini ~ % scp
+/Users/lyf/Downloads/dataviz-frontend.tar ubuntu@49.234.182.216:/home/ubantu/
+usage: scp [-346ABCOpqRrsTv] [-c cipher] [-D sftp_server_path] [-F ssh_config]
+           [-i identity_file] [-J destination] [-l limit] [-o ssh_option]
+           [-P port] [-S program] [-X sftp_option] source ... target
+zsh: permission denied: /Users/lyf/Downloads/dataviz-frontend.tar
+lyf@liuyunfengdeMac-mini ~ % chmod +r /Users/lyf/Downloads/dataviz-frontend.tar
+lyf@liuyunfengdeMac-mini ~ % docker load -i /Users/lyf/Downloads/dataviz-frontend.tar
+zsh: command not found: docker
+lyf@liuyunfengdeMac-mini ~ % chmod 755 /Users/lyf/Downloads/dataviz-frontend.tar
+lyf@liuyunfengdeMac-mini ~ % docker load -i /Users/lyf/Downloads/dataviz-frontend.tar
+zsh: command not found: docker
+lyf@liuyunfengdeMac-mini ~ % docker images
+zsh: command not found: docker
+lyf@liuyunfengdeMac-mini ~ % # 给文件加权限
+chmod +r /Users/lyf/Downloads/dataviz-frontend.tar
+
+# 正确的scp命令（替换成你的远程服务器信息）
+scp /Users/lyf/Downloads/dataviz-frontend.tar root@192.168.1.100:/root/docker_images/
+
+# 若远程服务器非默认22端口，加-P参数（大写P）
+scp -P 2222 /Users/lyf/Downloads/dataviz-frontend.tar root@192.168.1.100:/root/docker_images/
+zsh: command not found: #
+zsh: command not found: #
+chmod +r /Users/lyf/Downloads/dataviz-frontend.tar
+^Czsh: command not found: #
+^C%                                                                                                                          lyf@liuyunfengdeMac-mini ~ % chmod +r /Users/lyf/Downloads/dataviz-frontend.tar
+lyf@liuyunfengdeMac-mini ~ % scp /Users/lyf/Downloads/dataviz-frontend.tar ubuntu@49.234.182.216:/home/ubantu/
+The authenticity of host '49.234.182.216 (49.234.182.216)' can't be established.
+ED25519 key fingerprint is SHA256:NX72cPJF7Sjnu6eEPCU/nADRfSF95txxt72ryOWGfqM.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '49.234.182.216' (ED25519) to the list of known hosts.
+ubuntu@49.234.182.216's password: 
+scp: dest open "/home/ubantu/": Failure
+scp: failed to upload file /Users/lyf/Downloads/dataviz-frontend.tar to /home/ubantu/
+lyf@liuyunfengdeMac-mini ~ % scp /Users/lyf/Downloads/dataviz-frontend.tar ubuntu@49.234.182.216:/home/ubuntu/
+ubuntu@49.234.182.216's password: 
+dataviz-frontend.tar                                                                       100%   85MB  10.4MB/s   00:08    
+lyf@liuyunfengdeMac-mini ~ % ssh ubuntu@49.234.182.216
+ubuntu@49.234.182.216's password: 
+Welcome to Ubuntu 22.04 LTS (GNU/Linux 5.15.0-164-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Sat Mar 14 12:50:14 AM CST 2026
+
+  System load:  0.0390625          Processes:             112
+  Usage of /:   12.5% of 39.26GB   Users logged in:       1
+  Memory usage: 19%                IPv4 address for eth0: 10.0.4.17
+  Swap usage:   0%
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+New release '24.04.4 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+Last login: Sat Mar 14 00:20:44 2026 from 81.69.102.142
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+ubuntu@VM-4-17-ubuntu:~$ ls -l /home/ubuntu/
+total 86912
+-rwxr-xr-x 1 ubuntu ubuntu 88995840 Mar 14 00:50 dataviz-frontend.tar
+ubuntu@VM-4-17-ubuntu:~$ ls -lh /home/ubuntu/dataviz-frontend.tar
+-rwxr-xr-x 1 ubuntu ubuntu 85M Mar 14 00:50 /home/ubuntu/dataviz-frontend.tar
+ubuntu@VM-4-17-ubuntu:~$ # 格式：scp 本地tar文件路径 ubuntu@服务器IP:~/
+ubuntu@VM-4-17-ubuntu:~$ # 示例：上传后端镜像tar
+ubuntu@VM-4-17-ubuntu:~$ scp /Users/lyf/Downloads/dataviz-backend.tar ubuntu@49.234.182.216:~/
+The authenticity of host '49.234.182.216 (49.234.182.216)' can't be established.
+ED25519 key fingerprint is SHA256:NX72cPJF7Sjnu6eEPCU/nADRfSF95txxt72ryOWGfqM.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '49.234.182.216' (ED25519) to the list of known hosts.
+ubuntu@49.234.182.216's password: 
+/Users/lyf/Downloads/dataviz-backend.tar: No such file or directory
+ubuntu@VM-4-17-ubuntu:~$ scp
+usage: scp [-346ABCOpqRrsTv] [-c cipher] [-D sftp_server_path] [-F ssh_config]
+           [-i identity_file] [-J destination] [-l limit]
+           [-o ssh_option] [-P port] [-S program] source ... target
+ubuntu@VM-4-17-ubuntu:~$ /Users/lyf/Downloads/dataviz-backend.tar ubuntu@49.234.182.216:/home/ubuntu/
+-bash: /Users/lyf/Downloads/dataviz-backend.tar: No such file or directory
+ubuntu@VM-4-17-ubuntu:~$ scp /Users/lyf/Downloads/dataviz-backend.tar ubuntu@49.234.182.216:/home/ubuntu/
+ubuntu@49.234.182.216's password: 
+/Users/lyf/Downloads/dataviz-backend.tar: No such file or directory
+ubuntu@VM-4-17-ubuntu:~$ scp /Users/lyf/Downloads/dataviz-backend.tar ubuntu@49.234.182.216:/home/ubuntu/
+ubuntu@49.234.182.216's password: 
+/Users/lyf/Downloads/dataviz-backend.tar: No such file or directory
+ubuntu@VM-4-17-ubuntu:~$ ^C
+ubuntu@VM-4-17-ubuntu:~$ ^C
+ubuntu@VM-4-17-ubuntu:~$ ^C
+ubuntu@VM-4-17-ubuntu:~$ ^C
+ubuntu@VM-4-17-ubuntu:~$ \q
+Command 'q' not found, but can be installed with:
+sudo snap install q                       # version 1.6.3-1, or
+sudo apt  install python3-q-text-as-data  # version 3.1.6-1
+See 'snap info q' for additional versions.
+ubuntu@VM-4-17-ubuntu:~$ exit
+logout
+Connection to 49.234.182.216 closed.
+lyf@liuyunfengdeMac-mini ~ % ubuntu@VM-4-17-ubuntu:~$ scp /Users/lyf/Downloads/dataviz-backend.tar ubuntu@49.234.182.216:/home/ubuntu/
+ubuntu@49.234.182.216's password: 
+/Users/lyf/Downloads/dataviz-backend.tar: No such file or directory
+lyf@liuyunfengdeMac-mini ~ % # 核心：在Mac本地执行！路径用Mac的本地路径，远程路径用~简化（避免拼写错误）
+scp /Users/lyf/Downloads/dataviz-backend.tar ubuntu@49.234.182.216:~/
+zsh: command not found: #
+ubuntu@49.234.182.216's password: 
+dataviz-backend.tar                                                                        100%  214MB  11.8MB/s   00:18    
+lyf@liuyunfengdeMac-mini ~ % ssh ubuntu@49.234.182.216
+ls -lh ~/dataviz-backend.tar  # 能看到文件即为成功
+ubuntu@49.234.182.216's password: 
+Welcome to Ubuntu 22.04 LTS (GNU/Linux 5.15.0-164-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Sat Mar 14 12:55:40 AM CST 2026
+
+  System load:  0.2275390625       Processes:             114
+  Usage of /:   12.7% of 39.26GB   Users logged in:       1
+  Memory usage: 19%                IPv4 address for eth0: 10.0.4.17
+  Swap usage:   0%
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+New release '24.04.4 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+Last login: Sat Mar 14 00:50:43 2026 from 123.158.38.87
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+ubuntu@VM-4-17-ubuntu:~$ ls -lh ~/dataviz-backend.tar
+-rw-r--r-- 1 ubuntu ubuntu 214M Mar 14 00:55 /home/ubuntu/dataviz-backend.tar
+ubuntu@VM-4-17-ubuntu:~$ exit
+logout
+Connection to 49.234.182.216 closed.
+ls: #: No such file or directory
+ls: /Users/lyf/dataviz-backend.tar: No such file or directory
+ls: 能看到文件即为成功: No such file or directory
+lyf@liuyunfengdeMac-mini ~ % /Users/lyf/Downloads/docker-compose.yml 
+lyf@liuyunfengdeMac-mini ~ % scp /Users/lyf/Downloads/docker-compose.yml ubuntu@49.234.182.216:/home/ubuntu/
+ubuntu@49.234.182.216's password: 
+docker-compose.yml                                                                         100% 1175    65.6KB/s   00:00    
+lyf@liuyunfengdeMac-mini ~ % /Users/lyf/Downloads/.env 
+lyf@liuyunfengdeMac-mini ~ % scp /Users/lyf/Downloads/.env ubuntu@49.234.182.216:/home/ubuntu/
+ubuntu@49.234.182.216's password: 
+.env                                                                                       100%  210    11.6KB/s   00:00    
+lyf@liuyunfengdeMac-mini ~ % ssh ubuntu@49.234.182.216
+ubuntu@49.234.182.216's password: 
+Welcome to Ubuntu 22.04 LTS (GNU/Linux 5.15.0-164-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Sat Mar 14 12:59:32 AM CST 2026
+
+  System load:  0.001953125        Processes:             113
+  Usage of /:   13.2% of 39.26GB   Users logged in:       1
+  Memory usage: 19%                IPv4 address for eth0: 10.0.4.17
+  Swap usage:   0%
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+New release '24.04.4 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+Last login: Sat Mar 14 00:56:38 2026 from 123.158.38.87
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+ubuntu@VM-4-17-ubuntu:~$ mkdir -p ~/datavizpro
+-bash: mkdir -p ~/datavizpro: No such file or directory
+ubuntu@VM-4-17-ubuntu:~$ mkdir -p ~/datavizpro^C
+ubuntu@VM-4-17-ubuntu:~$ # 核心：所有空格都是英文半角（切换输入法到英文状态输入）
+ubuntu@VM-4-17-ubuntu:~$ mkdir -p ~/datavizpro
+ubuntu@VM-4-17-ubuntu:~$ ls -ld ~/datavizpro
+drwxrwxr-x 2 ubuntu ubuntu 4096 Mar 14 01:01 /home/ubuntu/datavizpro
+ubuntu@VM-4-17-ubuntu:~$ cd ~/datavizpro 
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ mv ~/dataviz-backend.tar
+-bash: mv ~/dataviz-backend.tar: No such file or directory
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ ls -lh ~/dataviz-backend.tar
+-rw-r--r-- 1 ubuntu ubuntu 214M Mar 14 00:55 /home/ubuntu/dataviz-backend.tar
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ mv ~/dataviz-backend.tar ~/datavizpro/
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ ls -lh ~/datavizpro/
+total 214M
+-rw-r--r-- 1 ubuntu ubuntu 214M Mar 14 00:55 dataviz-backend.tar
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ mv ~/dataviz-frontend.tar ~/datavizpro/
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ ls -lh ~/datavizpro
+total 299M
+-rw-r--r-- 1 ubuntu ubuntu 214M Mar 14 00:55 dataviz-backend.tar
+-rwxr-xr-x 1 ubuntu ubuntu  85M Mar 14 00:50 dataviz-frontend.tar
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ mv ~/docker-compose.yml ~/datavizpro/  
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ mv ~/dataviz-frontend.tar ~/datavizpro/^C
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ ls -lh ~/datavizpro/
+total 299M
+-rw-r--r-- 1 ubuntu ubuntu 214M Mar 14 00:55 dataviz-backend.tar
+-rwxr-xr-x 1 ubuntu ubuntu  85M Mar 14 00:50 dataviz-frontend.tar
+-rw-r--r-- 1 ubuntu ubuntu 1.2K Mar 14 00:58 docker-compose.yml
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ mv ~/.env ~/datavizpro/                
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ ls -lh ~/datavizpro/
+total 299M
+-rw-r--r-- 1 ubuntu ubuntu 214M Mar 14 00:55 dataviz-backend.tar
+-rwxr-xr-x 1 ubuntu ubuntu  85M Mar 14 00:50 dataviz-frontend.tar
+-rw-r--r-- 1 ubuntu ubuntu 1.2K Mar 14 00:58 docker-compose.yml
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ mv ~/.env
+-bash: mv ~/.env: No such file or directory
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ mv ~/.env ~/datavizpro/ 
+-bash: mv ~/.env: No such file or directory
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ mv ~/.env ~/datavizpro/ 
+mv: cannot stat '/home/ubuntu/.env': No such file or directory
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ exit
+logout
+Connection to 49.234.182.216 closed.
+lyf@liuyunfengdeMac-mini ~ % /Users/lyf/Downloads/.env 
+lyf@liuyunfengdeMac-mini ~ % scp /Users/lyf/Downloads/.env.example  ubuntu@49.234.182.216:/home/ubuntu/
+scp: stat local "/Users/lyf/Downloads/.env.example": No such file or directory
+lyf@liuyunfengdeMac-mini ~ % scp /Users/lyf/Downloads/.env ubuntu@49.234.182.216:/home/ubuntu/
+ubuntu@49.234.182.216's password: 
+.env                                                                                       100%  210    17.8KB/s   00:00    
+lyf@liuyunfengdeMac-mini ~ % ssh ubuntu@49.234.182.216
+ubuntu@49.234.182.216's password: 
+Welcome to Ubuntu 22.04 LTS (GNU/Linux 5.15.0-164-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Sat Mar 14 01:09:10 AM CST 2026
+
+  System load:  0.080078125        Processes:             113
+  Usage of /:   13.2% of 39.26GB   Users logged in:       1
+  Memory usage: 18%                IPv4 address for eth0: 10.0.4.17
+  Swap usage:   0%
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+New release '24.04.4 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+Last login: Sat Mar 14 00:59:32 2026 from 123.158.38.87
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+ubuntu@VM-4-17-ubuntu:~$ mv ~/.env  
+-bash: mv ~/.env: No such file or directory
+ubuntu@VM-4-17-ubuntu:~$ mv ~/.env .mv ~/.env ~/datavizpro/^C
+ubuntu@VM-4-17-ubuntu:~$ mv ~/.env ~/datavizpro/
+ubuntu@VM-4-17-ubuntu:~$ ls -a /home/ubuntu/ | grep .env
+ubuntu@VM-4-17-ubuntu:~$ ^C
+ubuntu@VM-4-17-ubuntu:~$ ls -lh ~/datavizpro/
+total 299M
+-rw-r--r-- 1 ubuntu ubuntu 214M Mar 14 00:55 dataviz-backend.tar
+-rwxr-xr-x 1 ubuntu ubuntu  85M Mar 14 00:50 dataviz-frontend.tar
+-rw-r--r-- 1 ubuntu ubuntu 1.2K Mar 14 00:58 docker-compose.yml
+ubuntu@VM-4-17-ubuntu:~$ ~/.env ~/datavizpro/
+-bash: /home/ubuntu/.env: No such file or directory
+ubuntu@VM-4-17-ubuntu:~$ ^C
+ubuntu@VM-4-17-ubuntu:~$ ls -la /home/ubuntu/ | grep .env
+ubuntu@VM-4-17-ubuntu:~$ ^C
+ubuntu@VM-4-17-ubuntu:~$ exit
+logout
+Connection to 49.234.182.216 closed.
+lyf@liuyunfengdeMac-mini ~ % scp /Users/lyf/Downloads/.env ubuntu@49.234.182.216:/home/ubuntu/
+ubuntu@49.234.182.216's password: 
+.env                                                                                       100%  210    12.9KB/s   00:00    
+lyf@liuyunfengdeMac-mini ~ % mv ~/.env ~/datavizpro/
+mv: rename /Users/lyf/.env to /Users/lyf/datavizpro/: No such file or directory
+lyf@liuyunfengdeMac-mini ~ % ssh ubuntu@49.234.182.216
+ubuntu@49.234.182.216's password: 
+Welcome to Ubuntu 22.04 LTS (GNU/Linux 5.15.0-164-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Sat Mar 14 01:13:18 AM CST 2026
+
+  System load:  0.0166015625       Processes:             112
+  Usage of /:   13.2% of 39.26GB   Users logged in:       1
+  Memory usage: 18%                IPv4 address for eth0: 10.0.4.17
+  Swap usage:   0%
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+New release '24.04.4 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+Last login: Sat Mar 14 01:09:57 2026 from 123.158.38.87
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+ubuntu@VM-4-17-ubuntu:~$ cp ~/.env ~/datavizpro/
+ubuntu@VM-4-17-ubuntu:~$ ls -la ~/datavizpro/ | grep .env
+-rw-r--r-- 1 ubuntu ubuntu       210 Mar 14 01:13 .env
+ubuntu@VM-4-17-ubuntu:~$ docker load -i dataviz-backend.tar
+docker load -i dataviz-backend.tar: command not found
+ubuntu@VM-4-17-ubuntu:~$ cd ~/datavizpro
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ docker load -i dataviz-backend.tar
+Command 'docker' not found, but can be installed with:
+sudo snap install docker         # version 28.4.0, or
+sudo apt  install docker.io      # version 28.2.2-0ubuntu1~22.04.1
+sudo apt  install podman-docker  # version 3.4.4+ds1-1ubuntu1.22.04.3
+See 'snap info docker' for additional versions.
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ docker load -i dataviz-frontend.ta
+Command 'docker' not found, but can be installed with:
+sudo snap install docker         # version 28.4.0, or
+sudo apt  install docker.io      # version 28.2.2-0ubuntu1~22.04.1
+sudo apt  install podman-docker  # version 3.4.4+ds1-1ubuntu1.22.04.3
+See 'snap info docker' for additional versions.
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ docker load -i dataviz-backend.tar
+Command 'docker' not found, but can be installed with:
+sudo snap install docker         # version 28.4.0, or
+sudo apt  install docker.io      # version 28.2.2-0ubuntu1~22.04.1
+sudo apt  install podman-docker  # version 3.4.4+ds1-1ubuntu1.22.04.3
+See 'snap info docker' for additional versions.
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ docker load -i dataviz-frontend.tar
+Command 'docker' not found, but can be installed with:
+sudo snap install docker         # version 28.4.0, or
+sudo apt  install docker.io      # version 28.2.2-0ubuntu1~22.04.1
+sudo apt  install podman-docker  # version 3.4.4+ds1-1ubuntu1.22.04.3
+See 'snap info docker' for additional versions.
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ docker images
+Command 'docker' not found, but can be installed with:
+sudo snap install docker         # version 28.4.0, or
+sudo apt  install docker.io      # version 28.2.2-0ubuntu1~22.04.1
+sudo apt  install podman-docker  # version 3.4.4+ds1-1ubuntu1.22.04.3
+See 'snap info docker' for additional versions.
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ sudo apt update -y
+Hit:1 http://mirrors.tencentyun.com/ubuntu jammy InRelease
+Get:2 http://mirrors.tencentyun.com/ubuntu jammy-updates InRelease [128 kB]
+Get:3 http://mirrors.tencentyun.com/ubuntu jammy-security InRelease [129 kB]
+Get:4 http://mirrors.tencentyun.com/ubuntu jammy-updates/main amd64 Packages [3,286 kB]
+Get:5 http://mirrors.tencentyun.com/ubuntu jammy-updates/universe amd64 Packages [1,257 kB]
+Get:6 http://mirrors.tencentyun.com/ubuntu jammy-security/main amd64 Packages [3,023 kB]
+Get:7 http://mirrors.tencentyun.com/ubuntu jammy-security/universe amd64 Packages [1,019 kB]
+Fetched 8,842 kB in 1s (6,717 kB/s)                    
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+227 packages can be upgraded. Run 'apt list --upgradable' to see them.
+<pt install -y apt-transport-https ca-certificates curl software-properties-common                    
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  libcurl4 python3-software-properties
+The following NEW packages will be installed:
+  apt-transport-https
+The following packages will be upgraded:
+  ca-certificates curl libcurl4 python3-software-properties software-properties-common
+5 upgraded, 1 newly installed, 0 to remove and 222 not upgraded.
+Need to get 691 kB of archives.
+After this operation, 200 kB of additional disk space will be used.
+Get:1 http://mirrors.tencentyun.com/ubuntu jammy-updates/main amd64 ca-certificates all 20240203~22.04.1 [162 kB]
+Get:2 http://mirrors.tencentyun.com/ubuntu jammy-updates/universe amd64 apt-transport-https all 2.4.14 [1,510 B]
+Get:3 http://mirrors.tencentyun.com/ubuntu jammy-updates/main amd64 curl amd64 7.81.0-1ubuntu1.23 [194 kB]
+Get:4 http://mirrors.tencentyun.com/ubuntu jammy-updates/main amd64 libcurl4 amd64 7.81.0-1ubuntu1.23 [290 kB]
+Get:5 http://mirrors.tencentyun.com/ubuntu jammy-updates/main amd64 software-properties-common all 0.99.22.9 [14.1 kB]
+Get:6 http://mirrors.tencentyun.com/ubuntu jammy-updates/main amd64 python3-software-properties all 0.99.22.9 [28.8 kB]
+Fetched 691 kB in 0s (13.0 MB/s)                  
+Preconfiguring packages ...
+(Reading database ... 88683 files and directories currently installed.)
+Preparing to unpack .../0-ca-certificates_20240203~22.04.1_all.deb ...
+Unpacking ca-certificates (20240203~22.04.1) over (20211016) ...
+Selecting previously unselected package apt-transport-https.
+Preparing to unpack .../1-apt-transport-https_2.4.14_all.deb ...
+Unpacking apt-transport-https (2.4.14) ...
+Preparing to unpack .../2-curl_7.81.0-1ubuntu1.23_amd64.deb ...
+Unpacking curl (7.81.0-1ubuntu1.23) over (7.81.0-1ubuntu1.20) ...
+Preparing to unpack .../3-libcurl4_7.81.0-1ubuntu1.23_amd64.deb ...
+Unpacking libcurl4:amd64 (7.81.0-1ubuntu1.23) over (7.81.0-1ubuntu1.20) ...
+Preparing to unpack .../4-software-properties-common_0.99.22.9_all.deb ...
+Unpacking software-properties-common (0.99.22.9) over (0.99.22) ...
+Preparing to unpack .../5-python3-software-properties_0.99.22.9_all.deb ...
+Unpacking python3-software-properties (0.99.22.9) over (0.99.22) ...
+Setting up apt-transport-https (2.4.14) ...
+Setting up ca-certificates (20240203~22.04.1) ...
+Updating certificates in /etc/ssl/certs...
+rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+30 added, 11 removed; done.
+Setting up python3-software-properties (0.99.22.9) ...
+Setting up libcurl4:amd64 (7.81.0-1ubuntu1.23) ...
+Setting up curl (7.81.0-1ubuntu1.23) ...
+Setting up software-properties-common (0.99.22.9) ...
+Processing triggers for libc-bin (2.35-0ubuntu3.11) ...
+Processing triggers for man-db (2.10.2-1) ...
+Processing triggers for dbus (1.12.20-2ubuntu4.1) ...
+Processing triggers for ca-certificates (20240203~22.04.1) ...
+Updating certificates in /etc/ssl/certs...
+0 added, 0 removed; done.
+Running hooks in /etc/ca-certificates/update.d...
+done.
+Scanning processes...                                                                                                        
+Scanning candidates...                                                                                                       
+Scanning linux images...                                                                                                     
+
+Running kernel seems to be up-to-date.
+
+Restarting services...
+ systemctl restart tat_agent.service
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+<ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg                    
+<ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg^C                  
+<b_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null                    
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ sudo apt update -y
+Hit:1 http://mirrors.tencentyun.com/ubuntu jammy InRelease
+Hit:2 http://mirrors.tencentyun.com/ubuntu jammy-updates InRelease
+Hit:3 http://mirrors.tencentyun.com/ubuntu jammy-security InRelease         
+Get:4 https://download.docker.com/linux/ubuntu jammy InRelease [48.5 kB]    
+Get:5 https://download.docker.com/linux/ubuntu jammy/stable amd64 Packages [71.6 kB]
+Fetched 120 kB in 1s (187 kB/s)     
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+222 packages can be upgraded. Run 'apt list --upgradable' to see them.
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ sudo systemctl start docker
+sudo systemctl enable dockerFailed to start docker.service: Unit docker.service not found.
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ sudo systemctl start docker
+Failed to start docker.service: Unit docker.service not found.
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ dpkg -l | grep docker
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ ^C
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ ^C
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ exit
+logout
+Connection to 49.234.182.216 closed.
+lyf@liuyunfengdeMac-mini ~ % dpkg -l | grep docker
+zsh: command not found: dpkg
+lyf@liuyunfengdeMac-mini ~ % ssh ubuntu@49.234.182.216
+ubuntu@49.234.182.216's password: 
+Welcome to Ubuntu 22.04 LTS (GNU/Linux 5.15.0-164-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Sat Mar 14 01:19:58 AM CST 2026
+
+  System load:  0.0390625          Processes:             114
+  Usage of /:   13.2% of 39.26GB   Users logged in:       1
+  Memory usage: 19%                IPv4 address for eth0: 10.0.4.17
+  Swap usage:   0%
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+New release '24.04.4 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+Last login: Sat Mar 14 01:13:18 2026 from 123.158.38.87
+ubuntu@VM-4-17-ubuntu:~$ dpkg -l | grep docker
+ubuntu@VM-4-17-ubuntu:~$ sudo apt update -y
+Hit:1 http://mirrors.tencentyun.com/ubuntu jammy InRelease
+Hit:2 http://mirrors.tencentyun.com/ubuntu jammy-updates InRelease
+Hit:3 http://mirrors.tencentyun.com/ubuntu jammy-security InRelease
+Hit:4 https://download.docker.com/linux/ubuntu jammy InRelease
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+222 packages can be upgraded. Run 'apt list --upgradable' to see them.
+ubuntu@VM-4-17-ubuntu:~$ sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+ca-certificates is already the newest version (20240203~22.04.1).
+ca-certificates set to manually installed.
+curl is already the newest version (7.81.0-1ubuntu1.23).
+software-properties-common is already the newest version (0.99.22.9).
+software-properties-common set to manually installed.
+apt-transport-https is already the newest version (2.4.14).
+0 upgraded, 0 newly installed, 0 to remove and 222 not upgraded.
+<ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+File '/usr/share/keyrings/docker-archive-keyring.gpg' exists. Overwrite? (y/N) curl: (35) OpenSSL SSL_connect: Connection reset by peer in connection to download.docker.com:443 
+                                                    y
+gpg: no valid OpenPGP data found.
+ubuntu@VM-4-17-ubuntu:~$ sudo rm -f /usr/share/keyrings/docker-archive-keyring.gpg
+<ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+<b_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+ubuntu@VM-4-17-ubuntu:~$ sudo apt update -y
+Hit:1 http://mirrors.tencentyun.com/ubuntu jammy InRelease
+Hit:2 http://mirrors.tencentyun.com/ubuntu jammy-updates InRelease
+Hit:3 http://mirrors.tencentyun.com/ubuntu jammy-security InRelease
+Get:4 https://mirrors.aliyun.com/docker-ce/linux/ubuntu jammy InRelease [48.5 kB]
+Get:5 https://mirrors.aliyun.com/docker-ce/linux/ubuntu jammy/stable amd64 Packages [71.6 kB]
+Fetched 120 kB in 0s (284 kB/s)    
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+222 packages can be upgraded. Run 'apt list --upgradable' to see them.
+ubuntu@VM-4-17-ubuntu:~$ sudo apt install -y docker-ce docker-ce-cli containerd.io
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  docker-buildx-plugin docker-ce-rootless-extras docker-compose-plugin libslirp0 pigz slirp4netns
+Suggested packages:
+  cgroupfs-mount | cgroup-lite docker-model-plugin
+The following NEW packages will be installed:
+  containerd.io docker-buildx-plugin docker-ce docker-ce-cli docker-ce-rootless-extras docker-compose-plugin libslirp0 pigz
+  slirp4netns
+0 upgraded, 9 newly installed, 0 to remove and 222 not upgraded.
+Need to get 97.2 MB of archives.
+After this operation, 393 MB of additional disk space will be used.
+Get:1 http://mirrors.tencentyun.com/ubuntu jammy/universe amd64 pigz amd64 2.6-1 [63.6 kB]
+Get:2 http://mirrors.tencentyun.com/ubuntu jammy/main amd64 libslirp0 amd64 4.6.1-1build1 [61.5 kB]
+Get:3 http://mirrors.tencentyun.com/ubuntu jammy/universe amd64 slirp4netns amd64 1.0.1-2 [28.2 kB]
+Get:4 https://mirrors.aliyun.com/docker-ce/linux/ubuntu jammy/stable amd64 containerd.io amd64 2.2.2-1~ubuntu.22.04~jammy [23.6 MB]
+Get:5 https://mirrors.aliyun.com/docker-ce/linux/ubuntu jammy/stable amd64 docker-ce-cli amd64 5:29.3.0-1~ubuntu.22.04~jammy [16.4 MB]
+Get:6 https://mirrors.aliyun.com/docker-ce/linux/ubuntu jammy/stable amd64 docker-ce amd64 5:29.3.0-1~ubuntu.22.04~jammy [22.6 MB]
+Get:7 https://mirrors.aliyun.com/docker-ce/linux/ubuntu jammy/stable amd64 docker-buildx-plugin amd64 0.31.1-1~ubuntu.22.04~jammy [20.3 MB]
+Get:8 https://mirrors.aliyun.com/docker-ce/linux/ubuntu jammy/stable amd64 docker-ce-rootless-extras amd64 5:29.3.0-1~ubuntu.22.04~jammy [6,388 kB]
+Get:9 https://mirrors.aliyun.com/docker-ce/linux/ubuntu jammy/stable amd64 docker-compose-plugin amd64 5.1.0-1~ubuntu.22.04~jammy [7,843 kB]
+Fetched 97.2 MB in 7s (13.5 MB/s)                                                                                           
+Selecting previously unselected package containerd.io.
+(Reading database ... 88706 files and directories currently installed.)
+Preparing to unpack .../0-containerd.io_2.2.2-1~ubuntu.22.04~jammy_amd64.deb ...
+Unpacking containerd.io (2.2.2-1~ubuntu.22.04~jammy) ...
+Selecting previously unselected package docker-ce-cli.
+Preparing to unpack .../1-docker-ce-cli_5%3a29.3.0-1~ubuntu.22.04~jammy_amd64.deb ...
+Unpacking docker-ce-cli (5:29.3.0-1~ubuntu.22.04~jammy) ...
+Selecting previously unselected package docker-ce.
+Preparing to unpack .../2-docker-ce_5%3a29.3.0-1~ubuntu.22.04~jammy_amd64.deb ...
+Unpacking docker-ce (5:29.3.0-1~ubuntu.22.04~jammy) ...
+Selecting previously unselected package pigz.
+Preparing to unpack .../3-pigz_2.6-1_amd64.deb ...
+Unpacking pigz (2.6-1) ...
+Selecting previously unselected package docker-buildx-plugin.
+Preparing to unpack .../4-docker-buildx-plugin_0.31.1-1~ubuntu.22.04~jammy_amd64.deb ...
+Unpacking docker-buildx-plugin (0.31.1-1~ubuntu.22.04~jammy) ...
+Selecting previously unselected package docker-ce-rootless-extras.
+Preparing to unpack .../5-docker-ce-rootless-extras_5%3a29.3.0-1~ubuntu.22.04~jammy_amd64.deb ...
+Unpacking docker-ce-rootless-extras (5:29.3.0-1~ubuntu.22.04~jammy) ...
+Selecting previously unselected package docker-compose-plugin.
+Preparing to unpack .../6-docker-compose-plugin_5.1.0-1~ubuntu.22.04~jammy_amd64.deb ...
+Unpacking docker-compose-plugin (5.1.0-1~ubuntu.22.04~jammy) ...
+Selecting previously unselected package libslirp0:amd64.
+Preparing to unpack .../7-libslirp0_4.6.1-1build1_amd64.deb ...
+Unpacking libslirp0:amd64 (4.6.1-1build1) ...
+Selecting previously unselected package slirp4netns.
+Preparing to unpack .../8-slirp4netns_1.0.1-2_amd64.deb ...
+Unpacking slirp4netns (1.0.1-2) ...
+Setting up docker-buildx-plugin (0.31.1-1~ubuntu.22.04~jammy) ...
+Setting up containerd.io (2.2.2-1~ubuntu.22.04~jammy) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/containerd.service → /lib/systemd/system/containerd.service.
+Setting up docker-compose-plugin (5.1.0-1~ubuntu.22.04~jammy) ...
+Setting up docker-ce-cli (5:29.3.0-1~ubuntu.22.04~jammy) ...
+Setting up libslirp0:amd64 (4.6.1-1build1) ...
+Setting up pigz (2.6-1) ...
+Setting up docker-ce-rootless-extras (5:29.3.0-1~ubuntu.22.04~jammy) ...
+Setting up slirp4netns (1.0.1-2) ...
+Setting up docker-ce (5:29.3.0-1~ubuntu.22.04~jammy) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/docker.service → /lib/systemd/system/docker.service.
+Created symlink /etc/systemd/system/sockets.target.wants/docker.socket → /lib/systemd/system/docker.socket.
+Processing triggers for man-db (2.10.2-1) ...
+Processing triggers for libc-bin (2.35-0ubuntu3.11) ...
+Scanning processes...                                                                                                        
+Scanning linux images...                                                                                                     
+
+Running kernel seems to be up-to-date.
+
+No services need to be restarted.
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+ubuntu@VM-4-17-ubuntu:~$ sudo systemctl daemon-reload
+ubuntu@VM-4-17-ubuntu:~$ sudo systemctl start docker
+ubuntu@VM-4-17-ubuntu:~$ sudo systemctl enable docker
+Synchronizing state of docker.service with SysV service script with /lib/systemd/systemd-sysv-install.
+Executing: /lib/systemd/systemd-sysv-install enable docker
+ubuntu@VM-4-17-ubuntu:~$ docker --version
+Docker version 29.3.0, build 5927d80
+ubuntu@VM-4-17-ubuntu:~$ sudo docker run hello-world
+Unable to find image 'hello-world:latest' locally
+
+sudo docker run hello-world
+^Cubuntu@VM-4-17-ubuntu:~$ sudo docker run hello-world
+Unable to find image 'hello-world:latest' locally
+docker: Error response from daemon: failed to resolve reference "docker.io/library/hello-world:latest": failed to do request: Head "https://registry-1.docker.io/v2/library/hello-world/manifests/latest": dial tcp 162.125.17.131:443: i/o timeout
+
+Run 'docker run --help' for more information
+ubuntu@VM-4-17-ubuntu:~$ sudo systemctl stop docker
+Warning: Stopping docker.service, but it can still be activated by:
+  docker.socket
+ubuntu@VM-4-17-ubuntu:~$ sudo mkdir -p /etc/docker
+ubuntu@VM-4-17-ubuntu:~$ sudo tee /etc/docker/daemon.json <<-'EOF'
+> {
+>   "registry-mirrors": [
+>     "https://docker.mirrors.ustc.edu.cn",
+>     "https://hub-mirror.c.163.com",
+>     "https://mirror.aliyuncs.com"
+>   ],
+>   "insecure-registries": []
+> }
+> EOF
+{
+  "registry-mirrors": [
+    "https://docker.mirrors.ustc.edu.cn",
+    "https://hub-mirror.c.163.com",
+    "https://mirror.aliyuncs.com"
+  ],
+  "insecure-registries": []
+}
+ubuntu@VM-4-17-ubuntu:~$ sudo systemctl daemon-reload
+ubuntu@VM-4-17-ubuntu:~$ sudo systemctl start docker
+ubuntu@VM-4-17-ubuntu:~$ sudo systemctl daemon-reload
+sudo systemctl start docker
+ubuntu@VM-4-17-ubuntu:~$ sudo docker run hello-world
+Unable to find image 'hello-world:latest' locally
+docker: Error response from daemon: failed to resolve reference "docker.io/library/hello-world:latest": failed to do request: Head "https://docker.mirrors.ustc.edu.cn/v2/library/hello-world/manifests/latest?ns=docker.io": dial tcp: lookup docker.mirrors.ustc.edu.cn on 127.0.0.53:53: no such host
+
+Run 'docker run --help' for more information
+ubuntu@VM-4-17-ubuntu:~$ cd ~/datavizpro
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ sudo docker load -i dataviz-backend.tar
+Loaded image: dataviz-backend:latest
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ sudo docker load -i dataviz-frontend.tar
+Loaded image: dataviz-frontend:latest
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ sudo docker images
+                                                                                                         i Info →   U  In Use
+IMAGE                     ID             DISK USAGE   CONTENT SIZE   EXTRA
+dataviz-backend:latest    185309cb94be        928MB          224MB        
+dataviz-frontend:latest   baf201e96a76        488MB           89MB        
+<??后端容器（替换[dataviz-backend:latest]为你实际的镜像名:标签）                                      
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ sudo docker run -d \
+>   --name dataviz-backend \
+>   -p 5000:5000 \  # 映射端口：服务器5000端口→容器5000端口
+  -v /home/ubuntu/datavizpro/.env:/app/.env \  # 挂载配置文件
+  dataviz-backend:latest
+
+# 启动前端容器（替换[dataviz-frontend:latest]）
+sudo docker run -d \
+  --name dataviz-frontend \
+  -p 80:80 \  # 映射80端口（浏览器默认端口）
+  dataviz-frontend:latest
+
+# 查看容器运行状态（Up即为成功）
+sudo docker psdocker: invalid reference format
+
+Run 'docker run --help' for more information
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ 
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ sudo docker run -d \
+>   --name dataviz-backend \
+>   -p 5000:5000 \  # 映射端口：服务器5000端口→容器5000端口
+  -v /home/ubuntu/datavizpro/.env:/app/.env \  # 挂载配置文件
+  dataviz-backend:latestdocker: invalid reference format
+
+Run 'docker run --help' for more information
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ sudo docker run -d \
+>   --name dataviz-backend \
+>   -p 5000:5000 \
+>   -v /home/ubuntu/datavizpro/.env:/app/.env \
+>   dataviz-backend:latest
+959f60cd6ead2c58ef4c575f8de7407780f555676febe59dabdafda600f18307
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ sudo docker run -d \
+>   --name dataviz-frontend \
+>   -p 80:80 \  # 映射80端口（浏览器默认端口）
+  dataviz-frontend:latestdocker: invalid reference format
+
+Run 'docker run --help' for more information
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ sudo docker run -d \
+>   --name dataviz-frontend \
+>   -p 80:80 \
+> dataviz-frontend:latest
+5a6b07dad230b30cf826f35fb3e4793658615d00c0acb49f9aba5cb5804923da
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ sudo docker ps
+CONTAINER ID   IMAGE                     COMMAND                  CREATED         STATUS         PORTS                                           NAMES
+5a6b07dad230   dataviz-frontend:latest   "docker-entrypoint.s…"   6 seconds ago   Up 5 seconds   0.0.0.0:80->80/tcp, [::]:80->80/tcp, 5000/tcp   dataviz-frontend
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ubuntu@VMubuntu@VM-4-17-ubuntu:~/datubuntu@VM-4-17-ubuntu:~/datavizpro$ ubuntu@VMubuntu@VM-4-17-ubuubuntu@VM-4-17-ubuubuntu@VMubuntu@VM-4-17-ubuntu:~/datubuntu@VMubuntu@VM-4-17-ubuubuntu@VMubuntu@VMubuntu@VM-4-17-ubuubuntu@VM-4-17-ubuubuntu@VM-4-17-ubuntu:~/datubuntu@VM-4-17-ubuntu:~/datubuntu@VM-4-17-ubuntu:~/datubuntu@VM-4-17-ubuntu:~/datubuntu@VM-4-17-ubuntu:~/datubuntu@VM-4-17-ubuntu:~/datubuntu@VM-4-17-ubuubuntu@VM-4-17-ubuubuntu@VMubuntu@VM                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 ubuntu@VM-4-17-ubuubuntu@VM-4-17-ubuubuntu@VM-4-17-ubuntu:~/datavizpro$ ubuntu@VM-4-17-ubuubuntu@VM-4-17-ubuntu:~/datavizpro$ ubuntu@VM-4-17-ubuubuntu@VM-4-17-ubuubuntu@VM-4-17-ubuubuntu@VM-4-17-ubuubuntu@VM-4-17-ubuubuntu@VM-4-17-ubuubuntu@VM-4-17-ubuntu:~/datavizpro$ ubuntu@VM-4-17-ubuntu:~/datavizpro$ sudo docker ps                                                                           
+CONTAINER ID   IMAGE                     COMMAND                  CREATED          STATUS          PORTS                                           NAMES
+5a6b07dad230   dataviz-frontend:latest   "docker-entrypoint.s…"   26 seconds ago   Up 25 seconds   0.0.0.0:80->80/tcp, [::]:80->80/tcp, 5000/tcp   dataviz-frontend
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ curl http://localhost:5000
+curl: (7) Failed to connect to localhost port 5000 after 0 ms: Connection refused
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ docker images
+docker images: command not found
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ sudo ubuntu@VM-4-17-ubuntu:~/datavizpro$ docker images
+sudo: ubuntu@VM-4-17-ubuntu:~/datavizpro$: command not found
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ docker images: command not found^C
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ sudo docker images
+sudo: docker images: command not found
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ docker images
+docker images: command not found
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ sudo docker images
+                                                                                                          i Info →   U  In Use
+IMAGE                     ID             DISK USAGE   CONTENT SIZE   EXTRA
+dataviz-backend:latest    185309cb94be        928MB          224MB    U   
+dataviz-frontend:latest   baf201e96a76        488MB           89MB    U   
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ docker-compose up -d
+docker-compose up -d: command not found
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ sudo docker-compose up -d
+sudo: docker-compose up -d: command not found
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ sudo docker-compose up -d
+sudo: docker-compose: command not found
+</v2.24.6/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose                    
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:--  0:02:10 --:--:--     0
+curl: (28) Failed to connect to mirror.ghproxy.com port 443 after 130853 ms: Connection timed out
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ sudo rm -f /usr/local/bin/docker-compose /usr/bin/docker-compose
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ sudo apt update -y
+Hit:1 http://mirrors.tencentyun.com/ubuntu jammy InRelease
+Hit:2 http://mirrors.tencentyun.com/ubuntu jammy-updates InRelease
+Hit:3 http://mirrors.tencentyun.com/ubuntu jammy-security InRelease      
+Hit:4 https://mirrors.aliyun.com/docker-ce/linux/ubuntu jammy InRelease  
+Reading package lists... Done                      
+Building dependency tree... Done
+Reading state information... Done
+222 packages can be upgraded. Run 'apt list --upgradable' to see them.
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ udo apt install -y docker-compose-plugin
+Command 'udo' not found, but can be installed with:
+sudo apt install udo
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ sudo apt install -y docker-compose-plugin
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+docker-compose-plugin is already the newest version (5.1.0-1~ubuntu.22.04~jammy).
+docker-compose-plugin set to manually installed.
+0 upgraded, 0 newly installed, 0 to remove and 222 not upgraded.
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ docker compose version
+Docker Compose version v5.1.0
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ sudo ln -s /usr/libexec/docker/cli-plugins/docker-compose /usr/bin/docker-compose
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ docker-compose --version
+Docker Compose version v5.1.0
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ sudo docker compose up -d
+WARN[0000] /home/ubuntu/datavizpro/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion 
+[+] Building 0.1s (1/1) FINISHED                                                                                              
+ => [internal] load local bake definitions                                                                               0.0s
+ => => reading from stdin 1.06kB                                                                                         0.0s
+[+] up 0/2
+ ⠙ Image datavizpro-dataviz-frontend Building                                                                             0.2s
+ ⠙ Image datavizpro-dataviz-backend  Building                                                                             0.2s
+unable to prepare context: path "/home/ubuntu/datavizpro/dataviz-backend" not found
+
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ sudo docker-compose ps
+WARN[0000] /home/ubuntu/datavizpro/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion 
+NAME      IMAGE     COMMAND   SERVICE   CREATED   STATUS    PORTS
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ sudo docker ps
+CONTAINER ID   IMAGE                     COMMAND                  CREATED          STATUS          PORTS                                           NAMES
+5a6b07dad230   dataviz-frontend:latest   "docker-entrypoint.s…"   11 minutes ago   Up 11 minutes   0.0.0.0:80->80/tcp, [::]:80->80/tcp, 5000/tcp   dataviz-frontend
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ sudo docker-compose ps
+WARN[0000] /home/ubuntu/datavizpro/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion 
+NAME      IMAGE     COMMAND   SERVICE   CREATED   STATUS    PORTS
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ sudo docker-compose logs -f
+sudo: docker-compose logs -f: command not found
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ docker-compose logs -f
+WARN[0000] /home/ubuntu/datavizpro/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion 
+permission denied while trying to connect to the docker API at unix:///var/run/docker.sock
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ sudo docker-compose logs -f
+WARN[0000] /home/ubuntu/datavizpro/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion 
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ sudo nano /home/ubuntu/datavizpro/docker-compose.yml
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ sudo docker-compose down
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ sudo docker-compose up -d
+[+] Building 0.1s (1/1) FINISHED                                                                                              
+ => [internal] load local bake definitions                                                                               0.0s
+ => => reading from stdin 1.06kB                                                                                         0.0s
+[+] up 0/2
+ ⠙ Image datavizpro-dataviz-frontend Building                                                                             0.1s
+ ⠙ Image datavizpro-dataviz-backend  Building                                                                             0.1s
+unable to prepare context: path "/home/ubuntu/datavizpro/dataviz-backend" not found
+
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ sudo docker-compose ps
+NAME      IMAGE     COMMAND   SERVICE   CREATED   STATUS    PORTS
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ubuntu@VM-4-17-ubuntuubuntu@VM-4-17-ubuntuubuntu@VM-4-17-ubuubuntu@VM-4-17-ubuubuntu@VM-4-17-ubuntu:~/datavizpro$                                                            ubuntu@VM-4-17-ubuntu:~/datavizpr       ubuntu@VM-4-17-ubuntu:~/datubuntu@VM-4-17-ubuntu:~/datubuntu@VM-4-17-ubuntu:~/datubuntu@VM-4-17-ubuntu:~/datubuntu@VM-4-17-ubuntu:~/datavizpro$                    ub                                                                         ubuntu@VM-4-17-ubun                                                                                                                                    ubunt                                                                                                                                                                                                                 ubuntu@VM-4-17-ubuubuntu@VM-4-17-ubuubuntu@VM-4-17-ubuntu:~/datavizpro$ ubuntu@VM-4-17-ubuubuntu@VM-4-17-ubuubuntu@VM-4-17-ubuubuntu@VM-4-17-ubuubuntu@VM-4-17-ubuubuntu@VM-4-17-ubuubuntu@VM-4-17-ubuntu:~/datavizpro$ ubuntu@VM-4-17-ubuubuntu@VM-4-17-uubuntu@VM-4-17-ubuntu:~/datavizpro$                                                                                                                             ubuntu@VM-4-17-ubuntu:~/datavizpro$ sudo docker-compose ps                                                                                                      NAME      IMAGE     COMMAND   SERVICE   CREATED   STATUS    PORTS                                                                                               ubuntu@VM-4-17-ubuntu:~/datavizpro$ sudo docker-compose ps                                                                                                      NAME      IMAGE     COMMAND   SERVICE   CREATED   STATUS    PORTS                                                                                               ubuntu@VM-4-17-ubuntu:~/datavizpro$ ls -la /home/ubuntu/datavizpro/docker-compose.yml                                                                           -rw-r--r-- 1 ubuntu ubuntu 1159 Mar 14 01:53 /home/ubuntu/datavizpro/docker-compose.yml                                                                       
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ sudo docker-compose config
+name: datavizpro
+services:
+  dataviz-backend:
+    build:
+      context: /home/ubuntu/datavizpro/dataviz-backend
+      dockerfile: Dockerfile
+    container_name: dataviz-backend
+    environment:
+      DATABASE_URL: postgresql://postgres:123456@localhost:5432/dataviz_db
+      LLM_API_KEY: sk-659dc3fa1af542eea93084eb32c4212e
+      LLM_BASE_URL: https://api.deepseek.com/v1
+    healthcheck:
+      test:
+        - CMD
+        - curl
+        - -f
+        - http://localhost:8000/health
+      timeout: 10s
+      interval: 30s
+      retries: 3
+      start_period: 40s
+    networks:
+      dataviz-network: null
+    ports:
+      - mode: ingress
+        target: 8000
+        published: "8000"
+        protocol: tcp
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: /home/ubuntu/datavizpro/dataviz-backend/uploads
+        target: /app/uploads
+        bind: {}
+  dataviz-frontend:
+    build:
+      context: /home/ubuntu/datavizpro/dataviz-frontend
+      dockerfile: Dockerfile
+    container_name: dataviz-frontend
+    depends_on:
+      dataviz-backend:
+        condition: service_started
+        required: true
+    environment:
+      VITE_API_BASE_URL: http://dataviz-backend:8000
+    healthcheck:
+      test:
+        - CMD
+        - wget
+        - --quiet
+        - --tries=1
+        - --spider
+        - http://localhost:5000
+      timeout: 10s
+      interval: 30s
+      retries: 3
+      start_period: 40s
+    networks:
+      dataviz-network: null
+    ports:
+      - mode: ingress
+        target: 5000
+        published: "5000"
+        protocol: tcp
+    restart: unless-stopped
+networks:
+  dataviz-network:
+    name: datavizpro_dataviz-network
+    driver: bridge
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ sudo docker images
+                                                                                                                                            i Info →   U  In Use
+IMAGE                     ID             DISK USAGE   CONTENT SIZE   EXTRA
+dataviz-backend:latest    185309cb94be        928MB          224MB    U   
+dataviz-frontend:latest   baf201e96a76        488MB           89MB    U   
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ sudo docker-compose down
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ sudo docker-compose up
+[+] Building 0.1s (1/1) FINISHED                                                                                                                                
+ => [internal] load local bake definitions                                                                                                                 0.0s
+ => => reading from stdin 1.06kB                                                                                                                           0.0s
+[+] up 0/2
+ ⠙ Image datavizpro-dataviz-backend  Building                                                                                                               0.1s
+ ⠙ Image datavizpro-dataviz-frontend Building                                                                                                               0.1s
+unable to prepare context: path "/home/ubuntu/datavizpro/dataviz-backend" not found
+
+ubuntu@VM-4-17-ubuntu:~/datavizpro$ sudo nano /home/ubuntu/datavizpro/docker-compose.yml                                                                           ubuntu@VM-4-17-ubuntu:~/datavizpro$ sudo nano /home/ubuntu/datavizpro/docker-compose.yml 
+
+  GNU nano 6.2                                                 /home/ubuntu/datavizpro/docker-compose.yml *                                                        
+services:
+  dataviz-backend:
+    image: dataviz-backend:latest
+    container_name: dataviz-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+      - LLM_API_KEY=${LLM_API_KEY}
+      - LLM_BASE_URL=${LLM_BASE_URL}
+    volumes:
+      - ./dataviz-backend/uploads:/app/uploads
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - dataviz-network
+
+  dataviz-frontend:
+    image: dataviz-frontend:latest
+    container_name: dataviz-frontend
+    ports:
+      - "5000:5000"
+    environment:
+      - VITE_API_BASE_URL=http://dataviz-backend:8000
+    depends_on:
+      - dataviz-backend
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:5000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - dataviz-network
+
+networks:
+  dataviz-network:
+    driver: bridge
+
+
+
+
+
+
+
+
+
+^G Help         ^O Write Out    ^W Where Is     ^K Cut          ^T Execute      ^C Location     M-U Undo        M-A Set Mark    M-] To Bracket  M-Q Previous
+^X Exit         ^R Read File    ^\ Replace      ^U Paste        ^J Justify      ^/ Go To Line   M-E Redo        M-6 Copy        ^Q Where Was    M-W Next

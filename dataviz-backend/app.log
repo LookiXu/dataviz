@@ -1,0 +1,47 @@
+2026-03-13 22:42:30,273 - jieba - DEBUG - Building prefix dict from the default dictionary ...
+2026-03-13 22:42:30,274 - jieba - DEBUG - Loading model from cache /var/folders/pv/_7y8hjh13ydbkmk0_jr7fqb40000gn/T/jieba.cache
+2026-03-13 22:42:30,876 - jieba - DEBUG - Loading model cost 0.603 seconds.
+2026-03-13 22:42:30,877 - jieba - DEBUG - Prefix dict has been built successfully.
+2026-03-13 22:42:56,001 - jieba - DEBUG - Building prefix dict from the default dictionary ...
+2026-03-13 22:42:56,001 - jieba - DEBUG - Loading model from cache /var/folders/pv/_7y8hjh13ydbkmk0_jr7fqb40000gn/T/jieba.cache
+2026-03-13 22:42:56,759 - jieba - DEBUG - Loading model cost 0.758 seconds.
+2026-03-13 22:42:56,759 - jieba - DEBUG - Prefix dict has been built successfully.
+2026-03-13 22:42:57,315 - httpx - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-13 23:13:17,582 - jieba - DEBUG - Building prefix dict from the default dictionary ...
+2026-03-13 23:13:17,583 - jieba - DEBUG - Loading model from cache /var/folders/pv/_7y8hjh13ydbkmk0_jr7fqb40000gn/T/jieba.cache
+2026-03-13 23:13:17,958 - jieba - DEBUG - Loading model cost 0.376 seconds.
+2026-03-13 23:13:17,958 - jieba - DEBUG - Prefix dict has been built successfully.
+2026-03-13 23:28:56,388 - jieba - DEBUG - Building prefix dict from the default dictionary ...
+2026-03-13 23:28:56,390 - jieba - DEBUG - Loading model from cache /var/folders/pv/_7y8hjh13ydbkmk0_jr7fqb40000gn/T/jieba.cache
+2026-03-13 23:28:56,780 - jieba - DEBUG - Loading model cost 0.392 seconds.
+2026-03-13 23:28:56,780 - jieba - DEBUG - Prefix dict has been built successfully.
+2026-03-13 23:29:16,068 - httpx - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-13 23:29:40,451 - httpx - INFO - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-14 05:06:13,920 - jieba - DEBUG - Building prefix dict from the default dictionary ...
+2026-03-14 05:06:13,922 - jieba - DEBUG - Loading model from cache /var/folders/pv/_7y8hjh13ydbkmk0_jr7fqb40000gn/T/jieba.cache
+2026-03-14 05:06:14,300 - jieba - DEBUG - Loading model cost 0.379 seconds.
+2026-03-14 05:06:14,300 - jieba - DEBUG - Prefix dict has been built successfully.
+2026-03-14 06:09:42,371 - main - INFO - 开始处理文件上传: filename=毕设直播数据表111111.xlsx, upload_type=live, related_name=Anna
+2026-03-14 06:09:42,372 - main - INFO - 文件已保存: /Users/lyf/Documents/trae_projects/dataviz-backend/uploads/20260314_060942_毕设直播数据表111111.xlsx
+2026-03-14 06:09:42,451 - main - INFO - 直播数据上传成功，共插入 47 条记录
+2026-03-14 06:09:51,949 - main - INFO - 开始处理文件上传: filename=副本星光计划&桃子视频号直播数据统计表.xlsx, upload_type=live, related_name=Anna
+2026-03-14 06:09:51,950 - main - INFO - 文件已保存: /Users/lyf/Documents/trae_projects/dataviz-backend/uploads/20260314_060951_副本星光计划&桃子视频号直播数据统计表.xlsx
+2026-03-14 06:09:51,995 - main - INFO - 直播数据上传成功，共插入 48 条记录
+2026-03-14 07:47:51,371 - jieba - DEBUG - Building prefix dict from the default dictionary ...
+2026-03-14 07:47:51,373 - jieba - DEBUG - Loading model from cache /var/folders/pv/_7y8hjh13ydbkmk0_jr7fqb40000gn/T/jieba.cache
+2026-03-14 07:47:51,718 - jieba - DEBUG - Loading model cost 0.347 seconds.
+2026-03-14 07:47:51,718 - jieba - DEBUG - Prefix dict has been built successfully.
+2026-03-14 07:55:49,787 - jieba - DEBUG - Building prefix dict from the default dictionary ...
+2026-03-14 07:55:49,788 - jieba - DEBUG - Loading model from cache /var/folders/pv/_7y8hjh13ydbkmk0_jr7fqb40000gn/T/jieba.cache
+2026-03-14 07:55:50,113 - jieba - DEBUG - Loading model cost 0.326 seconds.
+2026-03-14 07:55:50,113 - jieba - DEBUG - Prefix dict has been built successfully.
+2026-03-14 15:10:43,234 - jieba - DEBUG - Building prefix dict from the default dictionary ...
+2026-03-14 15:10:43,235 - jieba - DEBUG - Loading model from cache /var/folders/pv/_7y8hjh13ydbkmk0_jr7fqb40000gn/T/jieba.cache
+2026-03-14 15:10:43,532 - jieba - DEBUG - Loading model cost 0.298 seconds.
+2026-03-14 15:10:43,532 - jieba - DEBUG - Prefix dict has been built successfully.
+2026-03-14 15:36:08,504 - main - INFO - 开始处理文件上传: filename=毕设直播数据表111111.xlsx, upload_type=live, related_name=Anna
+2026-03-14 15:36:08,506 - main - INFO - 文件已保存: /Users/lyf/Documents/trae_projects/dataviz-backend/uploads/20260314_153608_毕设直播数据表111111.xlsx
+2026-03-14 15:36:08,597 - main - INFO - 直播数据上传成功，共插入 47 条记录
+2026-03-14 15:36:17,569 - main - INFO - 开始处理文件上传: filename=毕设直播数据表111111.xlsx, upload_type=live, related_name=Anna
+2026-03-14 15:36:17,570 - main - INFO - 文件已保存: /Users/lyf/Documents/trae_projects/dataviz-backend/uploads/20260314_153617_毕设直播数据表111111.xlsx
+2026-03-14 15:36:17,625 - main - INFO - 直播数据上传成功，共插入 47 条记录
