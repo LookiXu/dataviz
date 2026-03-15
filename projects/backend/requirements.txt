@@ -1,0 +1,9 @@
+flask==3.0.0
+flask-cors==4.0.0
+prisma==0.13.1
+pandas==2.1.4
+numpy==1.26.3
+python-dotenv==1.0.0
+pydantic==2.7.4
+werkzeug==3.0.1
+jieba==0.42.1

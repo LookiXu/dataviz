@@ -1,0 +1,81 @@
+generator client {
+  provider = "prisma-client-py"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// 直播记录表 - 存储直播核心指标数据
+model LiveRecord {
+  id                   String   @id @default(uuid())
+  topic                String   // 话题
+  hostName             String   // 主播姓名
+  liveDate             DateTime @db.Date // 直播日期
+  durationMinutes      Int      // 直播时长(分钟)
+  totalViewers         Int      // 累计观看人数
+  liveViewers          Int      // 场观人数
+  reservationCount     Int      // 预约观看人数
+  reservationRate      Float    // 预约-观看转化率(%)
+  avgWatchDuration     Float    // 人均观看时长(分钟)
+  maxOnlineUsers       Int      // 最高在线人数
+  followRate           Float    // 关注率(%)
+  interactionRate      Float    // 互动率(%)
+  shareRate            Float    // 分享率(%)
+  newFollowers         Int      // 新增关注数
+  orderCount           Int      // 成交订单数
+  wechatAddRate        Float    // 加微率(%)
+  viralTrafficCount    Int      @default(0) // 裂变人数
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  // 关联 AI 总结
+  aiSummaries          AISummary[]
+
+  @@index([liveDate])
+  @@index([hostName])
+  @@map("live_records")
+}
+
+// 课程反馈表 - 存储学员对课程的评价
+model CourseFeedback {
+  id              String   @id @default(uuid())
+  courseName      String   // 课程名称
+  instructorName  String   // 讲师姓名
+  satisfaction    Int      // 满意度评分 (1-5)
+  practicality    Int      // 内容实用性评分 (1-5)
+  studentReview   String   @db.Text // 学员评价文本
+  reviewDate      DateTime @db.Date // 评价日期
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  // 关联 AI 总结
+  aiSummaries     AISummary[]
+
+  @@index([reviewDate])
+  @@index([instructorName])
+  @@map("course_feedbacks")
+}
+
+// AI 总结表 - 存储 AI 生成的直播总结报告和课程总结
+model AISummary {
+  id                String   @id @default(uuid())
+  liveRecordId      String?  // 关联的直播记录 ID（可选）
+  courseFeedbackId  String?  // 关联的课程反馈 ID（可选）
+  summaryType       String   // 总结类型: "live" | "course"
+  summaryContent    String   @db.Text // 总结内容
+  keyMetrics        Json?    // 关键指标摘要(JSON格式)
+  generatedAt       DateTime @default(now())
+  
+  // 关联直播记录
+  liveRecord        LiveRecord? @relation(fields: [liveRecordId], references: [id], onDelete: Cascade)
+  // 关联课程反馈
+  courseFeedback    CourseFeedback? @relation(fields: [courseFeedbackId], references: [id], onDelete: Cascade)
+
+  @@index([liveRecordId])
+  @@index([courseFeedbackId])
+  @@index([summaryType])
+  @@index([generatedAt])
+  @@map("ai_summaries")
+}
